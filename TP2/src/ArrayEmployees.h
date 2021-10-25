@@ -10,6 +10,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "jupiter.h"
+
+#define LEN_NOMBREAPELLIDO 51
 
 typedef struct
 {
@@ -23,15 +26,13 @@ typedef struct
 
 
 int initEmpleados (Empleado* list, int len);
-
 void imprimirEmpleados(Empleado* list, int len);
-
 int addEmpleado (Empleado* list, int len, int id, char name[], char apellido[], float salario, int sector);
-
-int utn_getNumberInt(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
-
-static int esNumerica(char* cadena);
-
-static int myGets(char pResultado[], int len);
+int findEmptyPosition(Empleado* list, int len);
+int modifyEmpleado (Empleado* list, int len, int id);
+void mostrarSubMenu(void);
+int sortEmployee(Empleado* list, int len, int order);
+int removeEmpleado (Empleado* list, int len, int id);
+int informacionSalario( Empleado* list, int len, int* totalSalarios, float* promedioSalarios, int* empleadosPorEncimaPromedio);
 
 #endif /* ARRAYEMPLOYEES_H_ */
